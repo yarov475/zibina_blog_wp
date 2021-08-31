@@ -1,7 +1,5 @@
 <?php get_header(); ?>
-<?php
-require('menu.php');
-?>
+<?php require('menu.php');?>
     <div class="main">
     <div align="center">
         <hr color="#f07d10">
@@ -15,8 +13,7 @@ require('menu.php');
         <p class="animated  fadeInRightBig delay-2s"> Зыбина Г.Н. <em>биолог</em>. Долгое время она работала педагогом в<acronym
                     title="Санкт Петербургский Государственный Университет"> СПБГУ</acronym>. Любовь к
             <strong>жизни</strong>, природе и наукам о ней <q>придают</q> картинам особое волшебство. Зыбина -
-            талантливый педагог и живописец, но стала художником только выучив сына. Судьба свела женщину с тем же <a
-                    href="http://www.lediartdom.ru">педагогом</a>, который учмл ее ребенка. Ее картины это творчество
+            талантливый педагог и живописец, но стала художником только выучив сына. Судьба свела женщину с тем же педагогом</a>, который учмл ее ребенка. Ее картины это творчество
             человека, который, наконец, стал свободным и осмелился заниматься тем, что любит. <dfn>Философия </dfn>ее
             работ в передаче радости и света через цвет и композицию. Линия, пятно - все выразительные средства
             направленны на то чтобы успокоить и преободрить зрителя. Это живопись вносит яркие краски в мир. В
@@ -36,37 +33,54 @@ require('menu.php');
         <h2><i>Хочешь украсить свой дом - пиши!</i></h2><br><a
                 href=https://vk.com/id253808274>вконтакте</a></div>
     <section class="card_posts_all">
-        <div class="card_old">
 
-
-           <?php if (have_posts()) : ?>
-                <?php while (have_posts()) :
-                    the_post(); ?>
-                    <?php if (in_category('3')) { ?>
-                <?php } else { ?>
-                <?php } ?>
-                    <div class="">
-                        <p> <?php the_title(); ?></p>
-                        <p><a href="<?php the_permalink() ?>"
-                              title="Ссылка на: <?php the_title_attribute(); ?>"><?php echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
-                        </p>
-                        <p> <?php the_excerpt() ?> </p>
-                        <p class="postmetadata">Похожее <?php the_category(', '); ?></p>
-                    </div>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <p>Нет постов в цикле.</p>
-            <?php endif; ?>
-        </div>
         <div class="card_new">
-            <h2>Новости</h2>
-            <img src="" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+            <?php
+            $result = wp_get_recent_posts( [
+            'numberposts'      => 1,
+            'offset'           => 0,
+            'category'         => 0,
+            'orderby'          => 'post_date',
+
+            'post_type'        => 'post',
+            'post_status'      => 'draft, publish, future, pending, private',
+            'suppress_filters' => true,
+            ], OBJECT );
+            foreach( $result as $post ){
+            setup_postdata( $post );?>
+             <div class="card_new">
+                 <h2>Новости</h2>
+                    <p> <?php the_title(); ?></p>
+                    <p><a href="<?php the_permalink() ?>"
+                          title="Ссылка на: <?php the_title_attribute(); ?>"><?php echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
+                    </p>
+                    <p> <?php the_excerpt() ?> </p>
+                    <p class="postmetadata">Похожее <?php the_category(', '); ?></p>
+                </div>
+          <?php
+            }
+            wp_reset_postdata();
+            ?>
         </div>
+        <div class="card_old">
+            <?php
+            $arr = ['posts_per_page' => 3,
+                'offset' => 1,
+                'orderby' => 'date',
+            ];
+            $recent = new WP_Query($arr);
+            while ($recent->have_posts()) : $recent->the_post(); ?>
+                <div class="">
+                    <?= gt_get_post_view(); ?>
+                    <p> <?php the_title(); ?></p>
+                    <p><a href="<?php the_permalink() ?>"
+                          title="Ссылка на: <?php the_title_attribute(); ?>"><?php echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
+                    </p>
+                    <p> <?php the_excerpt() ?> </p>
+                    <p class="postmetadata">Похожее <?php the_category(', '); ?></p>
+                </div>
+            <?php endwhile; ?>
     </section>
-
-
-
-
-
+<?php get_sidebar();?>
 <?php get_footer() ?>

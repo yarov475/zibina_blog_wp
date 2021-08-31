@@ -1,8 +1,11 @@
 <?php get_header(); ?>
+<?php gt_set_post_view(); ?>
 <?php
 require('menu.php');
 ?>
 <?php if (have_posts()) : ?>
+
+
 <?php while (have_posts()) :
 the_post(); ?>
 <?php if (in_category('3')) { ?>

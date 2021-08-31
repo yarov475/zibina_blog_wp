@@ -163,9 +163,11 @@ figure {
 }
 
 h1 {
-    text-shadow: 1px 2px black;
+    color: forestgreen;;
 }
-
+h2{
+    color: orchid;
+}
 span {
     background-image: url("img/10.jpg");
 }
@@ -188,6 +190,7 @@ body {
     margin: 0 auto;
     color: #7c8782;
     font-family: Verdana;
+
 }
 
 .dws-menu {
@@ -401,14 +404,33 @@ li.dws-li a:hover {
     margin: 0 auto;
 }
 
-.card  img {
+.card img {
     margin: 0 auto;
 }
-.card_posts_all{
+
+.card_posts_all {
 
 
 }
-.card_old{
+
+.card_old {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: lawngreen;
+
+}
+
+.card_new {
+    text-align: center;
+    margin: 0 auto;
+    background-color: orchid;
+}
+
+.sidebar {
+    position: fixed;
+    left: 10%;
+    top: 15px;
+    background: plum;
 
 }
