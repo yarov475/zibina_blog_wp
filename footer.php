@@ -1,5 +1,5 @@
 <div class="footer">
-footer
+
     <div id="vk_community_messages"></div>
     <script type="text/javascript">
         VK.Widgets.CommunityMessages("vk_community_messages", 193143080, {expanded: "1",tooltipButtonText: "Есть вопрос?"});
@@ -8,7 +8,8 @@ footer
     <br><hr color="#f07d10"><div align= "right"><br/>&copy; Ярочкин</div></div></div>.<br>
 </body>
 </html>
-
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
 <?php wp_footer()?>
 </div>
 

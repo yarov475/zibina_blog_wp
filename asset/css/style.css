@@ -404,3 +404,11 @@ li.dws-li a:hover {
 .card  img {
     margin: 0 auto;
 }
+.card_posts_all{
+
+
+}
+.card_old{
+    display: flex;
+
+}

@@ -29,64 +29,44 @@ require('menu.php');
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdy6W0lBPP67kJrQwBN1FEb-LViqeMrCwXzCcSUYYClGLhxSw/viewform?usp=sf_link"
                 target="_blank"
                 style="cursor: pointer; font-size:22px;  text-decoration: none; padding:2px 135px; color:white; background-color:#f07d10; border-radius:9px; border: 2px solid #5e6970;">Купить
-            картину</a></div><br>
+            картину</a></div>
+    <br>
     <br>
     <div align="center">
-        <h2><i>для сотрудничества и оформления заказов пишите!</i></h2><br><a
+        <h2><i>Хочешь украсить свой дом - пиши!</i></h2><br><a
                 href=https://vk.com/id253808274>вконтакте</a></div>
-
-            <!-- Проверка наличия записей в цикле -->
-            <?php if (have_posts()) : ?>
-
-            <!-- Начало цикла -->
-            <?php while (have_posts()) :
-            the_post(); ?>
-            <!-- Цикл WordPress -->
-            <!-- Здесь уже определилась переменная $post, -->
-            <!-- на основе которой будет строится дальнейший код. -->
-            <!-- $post будет меняться для каждого поста while( have_posts() ). -->
-            <!-- $post нужна, чтобы работали теги шаблона: in_category('3'), the_permalink() и т.д. -->
-
-            <!-- Проверка находится ли этот пост в категории 3. -->
-            <!-- Если да, то задаем CSS класс div-у class="post-cat-three". -->
-            <!-- Если нет, то класс будет post class="post". -->
-            <?php if (in_category('3')) { ?>
-
-        <?php } else { ?>
-        <div>
-            <?php } ?>
-
-            <!-- Выводим заголовок поста, как ссылку на сам пост. -->
-            <p> <?php the_title(); ?></p>
-
-            <p> <a href="<?php the_permalink() ?>"                   title="Ссылка на: <?php the_title_attribute(); ?>"><?php echo get_the_post_thumbnail($id, 'thumbnail');?></a></p>
-           <p> <?php the_excerpt()?> </p>
-            <!-- Выводим категории поста, через запятую. -->
-            <p class="postmetadata">Похожее <?php the_category(', '); ?></p>
-        </div> <!-- закрываем основной тег div -->
-        <!-- Отсюда цикл начинает повторятся, если есть еще посты -->
-        <!-- Останавливаем цикл (endwhile), -->
-        <?php endwhile; ?>
-        <!-- Полное окончание цикла. -->
-        <!-- Если записей в цикле нет — цикл не сработал (else) -->
-        <?php else: ?>
-            <p>Нет постов в цикле.</p>
-        <?php endif; ?>
-        <!---->
-        <!--                       <img src="img/03.jpg" alt="пион" width = "100" height = "100">-->
-        <!--                       <img src="img/04.jpg" alt="деревенский пейзаж" width = "100" height = "100">-->
-        <!--                       <img src="img/05.jpg" alt="рассвет" width = "100" height = "100">-->
-        <!--                       <br /><img src="img/06.jpg" alt="пейзаж в петергофе" width = "100" height = "100">-->
-        <!--                       <img src="img/07.jpg" alt="тверская область" width = "100" height = "100">-->
-        <!--                       <img src="img/08.jpg" alt="осенний пейзаж" width = "100" height = "100">-->
-        <!--                       <img src="img/09.jpg" alt="Петербургский пейзаж" width = "100" height = "100">-->
-        <!--                       <br /><img src="img/10.jpg" alt="прованс" width = "100" height = "100">-->
-        <!--                       <img src="img/11.jpg" alt="весенний пейзаж" width = "100" height = "100">-->
-        <!--                       <img src="img/12.jpg" alt="натюрморт малые голандцы" width = "100" height = "100"></a></p></div>-->
-        <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
-        <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+    <section class="card_posts_all">
+        <div class="card_old">
 
 
-    </li>
-    </div>
+           <?php if (have_posts()) : ?>
+                <?php while (have_posts()) :
+                    the_post(); ?>
+                    <?php if (in_category('3')) { ?>
+                <?php } else { ?>
+                <?php } ?>
+                    <div class="">
+                        <p> <?php the_title(); ?></p>
+                        <p><a href="<?php the_permalink() ?>"
+                              title="Ссылка на: <?php the_title_attribute(); ?>"><?php echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
+                        </p>
+                        <p> <?php the_excerpt() ?> </p>
+                        <p class="postmetadata">Похожее <?php the_category(', '); ?></p>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>Нет постов в цикле.</p>
+            <?php endif; ?>
+        </div>
+        <div class="card_new">
+            <h2>Новости</h2>
+            <img src="" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </section>
+
+
+
+
+
 <?php get_footer() ?>
