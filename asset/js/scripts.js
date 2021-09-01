@@ -1,3 +1,5 @@
+
+console.log('what');
 window.dataLayer = window.dataLayer || [];
 
 function gtag() {
@@ -30,3 +32,6 @@ ym(61199074, "init", {
     trackHash: true
 });
 
+// document.getElementById('sideBarClose').addEventListener('click',function (){
+//     console.log('close');
+// });

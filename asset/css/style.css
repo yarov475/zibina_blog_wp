@@ -414,6 +414,11 @@ li.dws-li a:hover {
 }
 
 .card_old {
+    background: rgb(238,174,202);
+    background: rgb(131,58,180);
+    background: linear-gradient(354deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -422,15 +427,29 @@ li.dws-li a:hover {
 }
 
 .card_new {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,233,182,0.26404065043986347) 100%);
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 20px;
+    padding-bottom: 10px;
     text-align: center;
     margin: 0 auto;
     background-color: orchid;
 }
 
 .sidebar {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 20px;
+    margin-right: 10px;
+    margin: 2px;
     position: fixed;
     left: 10%;
-    top: 15px;
-    background: plum;
+    top: 1px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.26404065043986347) 100%);
 
 }

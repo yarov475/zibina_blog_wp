@@ -1,5 +1,6 @@
 <aside class="sidebar">
    <ul class="popular-posts">
+       <button id="sideBarClose">x</button>
             <?php
            $args = array('posts_per_page'=>3, 'meta_key'=>'post_views_count','orderby'=>'meta_value_num','order'=>'DESC');
            query_posts($args);

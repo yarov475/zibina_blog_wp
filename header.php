@@ -17,13 +17,25 @@
     if ( is_singular('post') ) {
   echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/asset/css/post.css">';
     } ?>
+    <?php
+    if ( is_category() ) {
+        echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/asset/css/category.css">';
+    } ?>
+    <?php
+    if ( is_page('contact') ) {
+        echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/asset/css/contact.css">';
+    } ?>
+    <?php
+    if ( is_page('portfolio') ) {
+        echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/asset/css/portfolio.css">';
+    } ?>
+    <?php if ( is_404() ) {
+    echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/asset/css/404.css">';
+    } ?>
 </head>
 
 
 <body>
-
-<!-- Yandex.Metrika counter -->
-
 <noscript>
     <div><img src="https://mc.yandex.ru/watch/61199074" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript> <!-- /Yandex.Metrika counter -->

@@ -44,13 +44,4 @@
          data-services="vkontakte,odnoklassniki,facebook,email"></div>
     <br><br>
     <hr>
-    <div align=center><h2> Оставьте заявку прямо на сайте!</h2>
-        <h3> С вами свяжутся наши сотрудники.</h3>
-        <form class="decor" action="send.php" method="post">
-            <input type="text" name="fio" placeholder="Укажите ФИО" required>
-            <input type="text" name="email" placeholder="Укажите e-mail" required>
-            <input type="submit" value="Отправить">
-        </form>
-    </div>
-    <?php get_sidebar(); ?>
     <?php get_footer() ?>
