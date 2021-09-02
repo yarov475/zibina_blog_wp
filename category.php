@@ -19,7 +19,7 @@
             <div id="content" role="main">
 
                 <?php
-                // Check if there are any posts to display
+
                 if (have_posts()) : ?>
 
                     <h1>  <?php $category = get_the_category();
@@ -35,8 +35,11 @@
                                title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
                         <div class="card">
+                            <br>   <br>   <br>
                             <?php the_content(); ?>
+                            <br>   <br>   <br>
                             <?php echo get_the_post_thumbnail($id, 'large'); ?>
+                            <br>   <br>   <br>
 
                         </div>
 

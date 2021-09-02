@@ -14,8 +14,11 @@ the_post(); ?>
     <div>
         <?php } ?>
         <p class="card">
+            <br>   <br>   <br>
             <?php echo get_the_post_thumbnail($id, 'large'); ?>
+            <br>   <br>   <br>
             <?php the_content(); ?>
+            <br>   <br>   <br>
 
         </p>
         <p class="postmetadata">Расположено в <?php the_category(', '); ?></p>
@@ -26,7 +29,8 @@ the_post(); ?>
     <?php else: ?>
         <p>Нет постов в цикле.</p>
     <?php endif; ?>
-    <?php get_footer(); ?>
+    <br><br><br>  <br><br><br>  <br><br><br>
     <?php
     require('menu.php');
     ?>
+<?php get_footer(); ?>

@@ -1,10 +1,10 @@
 <?php /* Template Name: portfolio */ ?>
 <?php get_header(); ?>
-<?php require('menu.php');?>
+<?php require('menu.php'); ?>
     <div class="main">
     <div align="center">
-        <hr color="#f07d10">
-<h1>Галерея</h1>
+    <hr color="#f07d10">
+    <h1>Галерея</h1>
     <br/><br/><br/>
     <br>
     <div class="buttond" style="text-align:center"><a
@@ -22,7 +22,7 @@
             <?php
             $arr = ['posts_per_page' => 10,
                 'offset' => 0,
-                'category_name' => 'масло',
+                'category_name' => 'Живопись',
                 'orderby' => 'date',
             ];
             $recent = new WP_Query($arr);
@@ -39,5 +39,5 @@
             <?php endwhile; ?>
 
     </section>
-<?php get_sidebar();?>
+<?php get_sidebar(); ?>
 <?php get_footer() ?>

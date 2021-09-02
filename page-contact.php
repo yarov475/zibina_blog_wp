@@ -13,17 +13,13 @@
     <hr>
     <i>для сотрудничества и оформления заказов</i><br/><br/>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
-    <ul>
-        <!-- VK Widget -->
-        <li>
-            <div id="vk_contact_us"></div>
-            <script type="text/javascript">
-                VK.Widgets.ContactUs("vk_contact_us", {text: "Пишите Галине Вконтакте"}, 253808274);
-            </script>
-            <br/>
-        <li><a href="mailto:ya.yarochkin@yandex.ru">на почту </a><br/><br/>
-        <li> или звоните: 8 903 099 20 74.
-    </ul>
+    <div id="vk_contact_us"></div>
+    <script type="text/javascript">
+        VK.Widgets.ContactUs("vk_contact_us", {text: "Пишите Галине Вконтакте"}, 253808274);
+    </script>
+    <br/>
+    Пишите на почту: <a href="mailto:ya.yarochkin@yandex.ru">ya.yarochkin@yandex.ru </a><br/><br/>
+    Звоните: <a href="tel:8 903 099 20 74">8 903 099 20 74</a>
     <br/> <br/><br/><br/>
     <hr>
     <br/><br/>
