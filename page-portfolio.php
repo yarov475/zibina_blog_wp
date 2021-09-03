@@ -28,8 +28,7 @@
             $recent = new WP_Query($arr);
             while ($recent->have_posts()) : $recent->the_post(); ?>
                 <div class="">
-                    <?= gt_get_post_view(); ?>
-                    <p> <?php the_title(); ?></p>
+                     <p> <?php the_title(); ?></p>
                     <p><a href="<?php the_permalink() ?>"
                           title="Ссылка на: <?php the_title_attribute(); ?>"><?php echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
                     </p>
@@ -37,7 +36,6 @@
                     <p class="postmetadata">Похожее <?php the_category(', '); ?></p>
                 </div>
             <?php endwhile; ?>
-
     </section>
 <?php get_sidebar(); ?>
 <?php get_footer() ?>
